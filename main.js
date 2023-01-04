@@ -11,9 +11,10 @@ function createWindow () {
       preload: path.join(__dirname, 'preload.js')
     }
   })
+  mainWindow.setMenuBarVisibility(false)
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('index.html')// 상단 메뉴바 제거
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

@@ -3,16 +3,36 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"> -->
     <link href="./styles.css" rel="stylesheet">
-    <title>2023 OSSP 테스트</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <title>Chosun University Typing Practice Pcrogram</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
 
+    <div class="login-form">
+      <form>
+        <input type="email" id="signInEmail" placeholder="Email">
+        <input type="password" id="signInPassword" placeholder="Password">
+        <input type="submit" value="Login" id="signInButton">
+      </form>
+   
+      <!-- <div class="links">
+        <a href="./signUpForm.html" target='_blank'>Don't have an account? Sign up here</a>
+      </div> -->
+
+      <label id="or_label">OR</label>
+      <div class="googleLogin_form"></div>
+
+    <button id="googleLoginButton">
+      <div class="google-icon-wrapper">
+          <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+        </div>
+        <p class="btn-text"><b>Sign in with google</b></p>
+      </div>
+
+    </button>
+<div>
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
   </body>
