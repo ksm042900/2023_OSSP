@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # electron-quick-start
 
 **Clone and run for a quick way to see Electron in action.**
@@ -38,3 +39,7 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 ## License
 
 [CC0 1.0 (Public Domain)](LICENSE.md)
+=======
+# 2023_OSSP
+2023 open source software project
+>>>>>>> c1318c4d8fe80f4ddc53af0ac49121cdae01f3b7
