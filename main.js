@@ -8,10 +8,14 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      nodeIntegration: true,
+      preload: path.join(__dirname, 'preload.js'),
+      nativeWindowOpen: true, // 구글로그인 접근을 허용하기위한 설정코드
+      enableRemoteModule: true,
+      nativeWindowOpen: true, // this allows you to use popups when doing authentication using firebase in an electron app
     }
   })
-  mainWindow.setMenuBarVisibility(false)
+  // mainWindow.setMenuBarVisibility(false)
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')// 상단 메뉴바 제거
@@ -42,3 +46,4 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+

@@ -1,7 +1,9 @@
-
+/* 
+@import url(https://fonts.googleapis.com/css?family=Roboto:500); */
 body{
     background-color: rgb(110, 120, 153);
 }
+
 /* Add styles here to customize the appearance of your app */
 *{
     padding:0;
@@ -118,7 +120,7 @@ body{
   .google-btn :active {
     background: #000000;
   }
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
 /* ------------------------------------------------------------------- */
 /* 구글 로그인 css 끝 */
 /* ------------------------------------------------------------------- */

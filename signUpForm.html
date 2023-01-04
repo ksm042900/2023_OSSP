@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypingRPG Sign Up</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="signUpForm.css"> 
+</head>
+<body>
+    <div class="container"></div>
+  
+    
+    <div class="signUp-form">
+        <form>
+          <a href="../index.html" id="logo_text" style="color:rgb(255, 255, 255);"> <img class="logo" src="../img/bigLogo.png" alt="">TypingRPG</a>
+          <input type="name" id="signUpName" maxlength='20' placeholder="User name">
+          <input type="email" id="signUpEmail" placeholder="Email">
+          <input type="password" id="signUpPassword" placeholder="New Password">
+          <input type="password" id="signUpReenterPassword" placeholder="Re-enter New Password">
+          <input type="submit" value="Sign Up" id="signUpButton">
+        </form>
+     
+        <div class="links">
+          <!-- <a href="#">Don't have an account? Sign up here</a> -->
+        </div>
+      </div>
+
+
+
+
+
+    <!-- 타이핑효과 불러오기 -->
+
+   
+
+      <section>     
+      </section>
+      <footer>    
+        @Mechanical Keyboard Gallery
+      </footer>
+    </div>
+
+
+   <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAhw6yriMRJ32RdkIYsYHYt-9-b_pWzZak",
+    authDomain: "typingrpg.firebaseapp.com",
+    databaseURL: "https://typingrpg-default-rtdb.firebaseio.com",
+    projectId: "typingrpg",
+    storageBucket: "typingrpg.appspot.com",
+    messagingSenderId: "208720513665",
+    appId: "1:208720513665:web:c09ce2c4b9cd95b5535b80",
+    measurementId: "G-NLG86SG4T6"
+
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+ // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Initialize Cloud Firestore and get a reference to the service
+
+
+  import { getAuth, setPersistence, createUserWithEmailAndPassword, signInWithEmailAndPassword ,signOut ,browserSessionPersistence, updateProfile} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+  
+  const auth = getAuth();
+
+document.getElementById('signUpButton').addEventListener('click',(event)=>{
+      event.preventDefault() 
+      const signUpName = document.getElementById('signUpName').value
+      const signUpEmail = document.getElementById('signUpEmail').value
+      const signUpPassword = document.getElementById('signUpPassword').value
+      const signUpReenterPassword = document.getElementById('signUpReenterPassword').value
+      
+    if(signUpPassword == signUpReenterPassword){ //만약 비밀번호와 재확인 비밀번호가 같으면 계정생성
+      createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+          .then((userCredential) => {
+              // Signed in 
+              alert('계정이 등록되었습니다.');
+              console.log(userCredential)
+              const user = userCredential.user;
+                firebase.database().ref('users/'+user.uid).set({
+                        uid: user.uid,
+                        name: signUpName,
+                        email: signUpEmail,
+                        spd: 0, 
+                });
+
+                 //사용자의 displayName 변경(설정)
+                updateProfile(auth.currentUser, {
+                    displayName: signUpName
+                  }).then(() => {
+                    // Profile updated!
+                    // ...
+                    console.log("닉네임설정 성공");
+                  }).catch((error) => {
+                    console.log("닉네임설정 오류");
+                  });
+                })
+
+
+          .catch((error) => {
+              alert('잘못된 양식입니다.');
+              const errorCode = error.code;
+              const errorMessage = error.message;
+          });
+    }else{
+        alert('입력하신 비밀번호와 재확인 비밀번호가 동일하지 않습니다.');
+    }
+
+})
+    
+
+
+//   //로그인확인버튼을 눌렀을때
+//   document.getElementById('loginCheckButton').addEventListener('click',(event)=>{
+//     if( document.getElementById('loginCheckButton').innerHTML == "로그아웃"){
+//         signOut(auth).then(() => {
+//         // Sign-out successful.
+//         console.log("로그아웃 성공");
+//         }).catch((error) => {
+//         // An error happened.
+//         });
+//     }else{
+//         window.location.href = 'login.html'
+//     }
+// })
+
+  
+//   //만약 로그인된 상태이면 아래 함수 호출
+//   auth.onAuthStateChanged(function(user) {
+//     if (user) {
+//         document.getElementById('loginCheckButton').innerHTML = "로그아웃";
+//     } else {
+//         // No user is signed in.
+//         document.getElementById('loginCheckButton').innerHTML = "로그인";
+//     }
+//     });
+
+  //로그인 시 이동하는 함수
+  
+
+   </script>
+  
+ 
+
+</body>
+</html>
