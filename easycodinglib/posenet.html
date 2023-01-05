@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet@2.2.2/dist/posenet.min.js"></script>
+
+    <style>
+        /* 이미지에 캔버스를 겹쳐서 그릴때는 아래 주석 해제 */
+        canvas {
+            position: absolute;
+        }
+
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img id='img' src='../images/person.jpg ' />
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    var flipHorizontal = false;
+
+    const img = document.getElementById('img');
+    const canvas = document.getElementById("canvas");
+    const context = canvas.getContext("2d");
+
+    posenet.load().then(function (net) {
+        const pose = net.estimateSinglePose(img, {
+            flipHorizontal: false
+        });
+        return pose;
+    }).then(function (pose) {
+        console.log(pose);
+        console.log(img.width, img.height);
+        canvas.width = img.width;
+        canvas.height = img.height;
+        drawKeypoints(pose.keypoints, 0.6, context);
+        drawSkeleton(pose.keypoints, 0.6, context);
+    })
+</script>
+<script src="posenet.js"></script>
+
+
+</html>
