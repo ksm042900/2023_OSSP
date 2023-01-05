@@ -8,7 +8,7 @@
 3. 외국인을 위한 사이트이므로 영어로 구성되어야함
 
 [오픈소스.1 : https://github.com/nanuyo/tensorflowjs_tutorial_by_easycoding](https://github.com/nanuyo/tensorflowjs_tutorial_by_easycoding)
-
+= https://github.com/tensorflow/tfjs-models
 [오픈소스.2 : https://www.tensorflow.org/js](https://www.tensorflow.org/js)
 
 [학습모델만들기 : https://teachablemachine.withgoogle.com/](https://teachablemachine.withgoogle.com/)
