@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 AI/XR/Uneral  Engine관련 엔지니어를 모십니다.
 
 기술이 맞고, 좋은 경력이 있으시고,  기타 조건이 부합된다면, 좋은  package를 offer드릴 수 있어요. 관심 있으시면 자세한 말씀 따로 드릴께요!
@@ -63,3 +64,9 @@ Remote control
  
 
 연락처: hjparkg71@gmail.com
+=======
+# 2023_OSSP
+2023 open source software project
+
+Tensorflow.js 객체식별 오픈소스를 활용한 한국음식 식별기
+>>>>>>> 0d4e80754f2085e241ce661843d31a045fb15f48
