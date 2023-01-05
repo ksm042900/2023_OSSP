@@ -9,13 +9,15 @@
 
 [오픈소스.1 : https://github.com/nanuyo/tensorflowjs_tutorial_by_easycoding](https://github.com/nanuyo/tensorflowjs_tutorial_by_easycoding)
 
-= https://github.com/tensorflow/tfjs-models
-
 [오픈소스.2 : https://www.tensorflow.org/js](https://www.tensorflow.org/js)
+
+= https://github.com/tensorflow/tfjs-models
 
 [학습모델만들기 : https://teachablemachine.withgoogle.com/](https://teachablemachine.withgoogle.com/)
 
 ### 2. 기능 설명
+
+
 
 
 
