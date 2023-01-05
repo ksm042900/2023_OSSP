@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <img id="img" src="dog.jpg"></img>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"> </script>
+
+    <script>
+        const img = document.getElementById('img');
+
+        console.log(mobilenet);
+
+        mobilenet.load().then(model => {
+            console.log(model);
+            model.classify(img).then(predictions => {
+                console.log(predictions);
+            });
+        });
+    </script>
+</body>
+
+</html>
