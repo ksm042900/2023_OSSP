@@ -9,7 +9,7 @@
 
 [오픈소스.1 : https://github.com/nanuyo/tensorflowjs_tutorial_by_easycoding](https://github.com/nanuyo/tensorflowjs_tutorial_by_easycoding)
 
-[오픈소스.2 : [https://www.tensorflow.org/js](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet)]([https://www.tensorflow.org/js](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet))
+[오픈소스.2 : https://github.com/tensorflow/tfjs-models/tree/master/mobilenet](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet)
 
 [학습모델만들기 : https://teachablemachine.withgoogle.com/](https://teachablemachine.withgoogle.com/)
 
@@ -19,6 +19,7 @@
 #
 한국음식의 종류를 판별하기 위해 'teachablemachine' 에서 한국음식 이미지를 학습시킨 새로운 모델을 만들어 tensorflow.js에 적용.
 
+[한국 음식 데이터셋 : https://aihub.or.kr/](https://aihub.or.kr/)
 
 
 
