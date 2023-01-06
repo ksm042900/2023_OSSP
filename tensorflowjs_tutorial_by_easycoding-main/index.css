@@ -1,0 +1,29 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,700);
+
+body{
+    background-color: antiquewhite;
+    font-family: 'Roboto';
+}
+
+.btn-outline-secondary{
+    background-color: rgb(185, 185, 185);
+    border-radius: 5px;
+}
+
+.card{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-left: 260px;
+}
+
+.described{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: 500px;
+    margin-top: -45px;
+    margin-left: 1100px;
+}

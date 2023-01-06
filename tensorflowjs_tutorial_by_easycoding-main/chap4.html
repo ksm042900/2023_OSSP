@@ -9,29 +9,33 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <title>쉬운코딩 인공지능 강좌</title>
+    <link rel="stylesheet" type="text/css" href="index.css"> 
+    <title>Korean Food</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row text-center py-5">
             <div class="col">
-                <h1>what food is this?</h1>
-                <p id="status">나의 모델을 로딩중입니다.</p>
+                <h1>WHAT FOOD IS THIS?</h1>
+                <p id="status">Loading Model</p>
                 <div class="spinner-border text-primary" id="loader">
                 </div>
                 <div class="card">
                     <img id="img"></img>
                     <div class="card-body">
-                        <h1 id="result"></h1>
-                        <input class="btn btn-outline-secondary" id="input" type="file" name="file" />
+                        <h1 id="result"></h1>                     
+                        <input class="btn-outline-secondary" id="input" type="file" name="file"  />
                     </div>
                 </div>
+               
             </div>
         </div>
     </div>
 
+    <div class="described">
+        asddads
+        </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
@@ -49,7 +53,7 @@
 
         tmImage.load(modelURL, metadataURL).then(model => {
             document.getElementById('loader').style.display = 'none';
-            document.getElementById('status').innerHTML = "나의 모델 로딩 완료"
+            document.getElementById('status').innerHTML = "Model Loading Complete"
 
             function run() {
                 model.predict(img).then(predictions => {
@@ -59,7 +63,7 @@
                 });
             }
 
-            img.src = "김밥.";
+            img.src = "";
 
             input.addEventListener('change', (e) => {
                 img.src = URL.createObjectURL(e.target.files[0]);
