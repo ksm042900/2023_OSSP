@@ -15,6 +15,15 @@
 
 [학습모델만들기 : https://teachablemachine.withgoogle.com/](https://teachablemachine.withgoogle.com/)
 
+기본적으로 위 오픈소스는 강아지 품종을 판별하는 기능을 가지고 있음.
+
+![품종 판별 스크린샷](https://user-images.githubusercontent.com/90131881/211037338-9ee1f945-8a10-4959-88fe-59aac173c59e.PNG)
+#
+한국음식의 종류를 판별하기 위해 'teachablemachine' 에서 한국음식 이미지를 학습시킨 새로운 모델을 만들어 tensorflow.js에 적용.
+
+
+
+
 ### 2. 기능 설명
 
 
