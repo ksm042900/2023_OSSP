@@ -11,8 +11,6 @@
 
 [오픈소스.2 : https://www.tensorflow.org/js](https://www.tensorflow.org/js)
 
-= https://github.com/tensorflow/tfjs-models
-
 [학습모델만들기 : https://teachablemachine.withgoogle.com/](https://teachablemachine.withgoogle.com/)
 
 기본적으로 위 오픈소스는 강아지 품종을 판별하는 기능을 가지고 있음.
