@@ -3,11 +3,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,700);
 
 body{
-    background-color: antiquewhite;
     font-family: 'Roboto';
+    background-image: url("배경화면.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(192, 178, 162);
 }
-
-/* @media screen and (min-width: 1024px){
+/* 
+@media screen and (min-width: 1024px){
     .container{
         zoom: 0.8;
     }
@@ -17,11 +20,11 @@ body{
 .filebox label {
     display: inline-block;
     padding: .5em .75em;
-    color: #999;
+    color: rgb(255, 255, 255);
     font-size: inherit;
     line-height: normal;
     vertical-align: middle;
-    background-color: #fdfdfd;
+    background-color:  rgb(151, 139, 114);
     cursor: pointer;
     border: 1px solid #ebebeb;
     border-bottom-color: #e2e2e2;
@@ -52,6 +55,7 @@ body{
 .card{
     height: 50%;
     border-radius: 10px;
+    margin-top: 15px;
 }
 #img{
     border-radius: 10px;

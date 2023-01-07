@@ -1,0 +1,153 @@
+
+ *{
+    padding:0;
+    margin: 0;
+    /* border: 1px solid black; */
+ }
+ 
+
+
+body{
+    padding:0px !important;
+    font-family : "Neodgm";
+    /* background-color: #3e4942; */
+    background-image: url("배경화면.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(192, 178, 162);
+    /* background-position: 0cm -100px;  */
+    color: rgb(133, 114, 114);
+}
+p{
+   color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 768px){
+   section{
+      margin-top: -250px;
+   }
+   p{
+      color: rgb(172, 154, 148)
+   }
+}
+
+.logo{
+   position: absolute;
+   width: 50px;
+   height: 32px;
+   margin-left: -60px;
+   margin-top: 14px;
+
+}
+/* .startButton:hover{
+
+} */
+ .container{
+    max-width:700px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+ }
+header{
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+ header>p{
+    font-size: 2.5rem;
+    font-weight: 500;
+
+ }
+ header>ul{
+    display: flex;
+ }
+ header>ul>li{
+    list-style-type:none;
+    margin-left: 1.5rem;
+ }
+ header>ul>li>a{
+    text-decoration: none;
+    font-size:1.4rem;
+    font-weight: 500;
+    padding-bottom:5px;
+    color: rgb(65, 59, 56);
+    
+ }
+ header>ul>li:first-child>a{
+    border-bottom:5px solid
+    rgb(255, 255, 255);
+ }
+
+ /* 마우스 올릴 시 효과 */
+header>ul>li>a:hover{
+    border-bottom: 5px solid 
+    gray;
+}
+@media screen and (max-width:600px){
+    header{
+        flex-direction: column;
+    }
+}
+
+
+ section{
+    padding:0 1rem;
+    text-align: center;
+ }
+section>p{
+    margin-bottom:2rem;
+}
+ section>p:first-child{
+    font-size: 2rem;
+    font-weight: 500;
+ }
+
+ section>p:last-of-type{
+    font-size: 1.3rem;
+    font-weight:500;
+ }
+
+
+
+ /* 버튼 디자인 */
+ section>a>button{
+    font-family : "Neodgm";
+    display:block;
+    border: 1px none;
+    width: 250px;
+    height: 70px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    text-decoration-line: none;
+    background-color: rgb(151, 139, 114);
+    color:rgb(240, 239, 239);
+    
+ }
+   .startButton:hover{
+    background-color: rgb(94, 86, 69);
+}
+
+
+
+
+
+ footer{
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: gray;
+ }
+ footer>a{
+    text-decoration: none;
+    color:white;
+ }

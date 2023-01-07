@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+  <head>
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" sizes="16x16">
+    <meta name="description" content="간편하게 즐길 수 있는 RPG형식의 타자연습 사이트/타이핑 사이트">
+    <meta property="og:title" content="타이핑RPG TypingRPG" />
+    <meta property="og:description"  content="간편하게 즐길 수 있는 RPG형식의 타자연습 사이트" />
+    <link rel="canonical" href="https://typingrpg.netlify.app/index.html">
+
+    <!-- Required meta tags -->
+    <meta name="google-site-verification" content="UZrn9EZIicOKKnIINbiWZihKYS9FZMlQJ5gQMK03zC8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-18321MDWM8"></script>
+
+  
+
+    <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
+
+    
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-18321MDWM8');
+    </script>
+
+
+
+    <!-- naver search advisor -->
+    <meta name="naver-site-verification" content="a9fb9a94574a826a75780a2a7b83206d4e548042" />
+
+   
+    <link rel="stylesheet" type="text/css" href="main.css"> 
+    <title>Korean Food Guide</title>
+  
+  </head>
+
+
+
+  
+  <body>
+  
+    <!-- 타이핑효과 불러오기 -->
+    <script src="https://unpkg.com/type-hangul"></script>
+    <div class="container">
+      <header>
+        <p id="LogoText"  style="color:rgb(172, 154, 148);">  <img class="logo" src="logo.jpg" alt="">Korea food guide</p>
+
+        
+     
+      </header>
+
+      <section>
+        <p id="target">WHAT FOOD IS THIS?</p>
+        <script>
+          //처음 1회 타이핑효과 
+          var $target = document.querySelector('#target');
+            $target.addEventListener('th.afterType', function (e) {
+            });
+            TypeHangul.type('#target');
+        </script>
+
+
+        <p>It is a website equipped with artificial intelligence that learned Korean food images.
+            If you have a picture of the food, you can see what kind of food it is in Korea.</p>
+        <a href="./chap4.html" style="text-decoration-line: none"><button class="startButton">Search now</button></a>
+  
+      </section>
+      <footer>
+        
+        @Korean Food Guide 
+      </footer>
+    </div>
+
+
+  
+  </body>
+</html>
