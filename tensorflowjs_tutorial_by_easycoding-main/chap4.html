@@ -10,63 +10,132 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="index.css"> 
-    <title>Korean Food</title>
+    <title>Korean Food Guide</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row text-center py-5">
             <div class="col">
-                <h1>WHAT FOOD IS THIS?</h1>
+                <h1><img src="kor_flag.jpg" id="kor_flagImg" alt=""> WHAT FOOD IS THIS?</h1>
                 <p id="status">Loading Model</p>
+                
+            
+            <div class="filebox">
+                <label for="input">Select photo</label>
+                <input class="btn-outline-secondary" id="input" type="file" name="file"  />
+            </div>
+
                 <div class="spinner-border text-primary" id="loader">
                 </div>
+
                 <div class="card">
                     <img id="img"></img>
                     <div class="card-body">
                         <h1 id="result"></h1>                     
-                        <input class="btn-outline-secondary" id="input" type="file" name="file"  />
                     </div>
                 </div>
-               
-            </div>
+            </div>       
         </div>
+        <div class="described">
+            <p id="manual">
+                Please upload a picture.
+            </p>
+        
+        </div>
+  
     </div>
 
-    <div class="described">
-        asddads
-        </div>
+<script src="https://code.jquery.com/jquery-1.8.0.js"
+integrity="sha256-00Fh8tkPAe+EmVaHFpD+HovxWk7b97qwqVi7nLvjdgs="
+crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(window).on('load', function () {
+    $("#load").delay('50').fadeOut();
+});
+</script>
+<style type="text/css">
+#load {
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+position: fixed;
+display: block;
+opacity: 0.8;
+background: rgb(0, 0, 0,0.5);
+z-index: 99;
+text-align: center;
+}
+
+#load > img {
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+z-index: 100;
+}
+</style>
+<div id="load">
+<img src="img/loading.gif" alt="loading">
+</div>
+<!-- Loading 화면 코드 종료---------------------------------------------------------------------------------- Loading 화면 코드 종료------------>
+<!-- Loading 화면 코드 종료---------------------------------------------------------------------------------- Loading 화면 코드 종료------------>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-
+    <!-- //메뉴얼 문자열 import -->
+    <script type="text/javascript" src="/manual_text.js"></script> 
+    
     <script>
+        // 메뉴얼 불러오기
+        let manual = []; 
+        getManual(); 
+        //
         const img = document.getElementById('img');
         const result = document.getElementById('result');
         let input = document.getElementById('input');
+        let manualText = document.getElementById('manual');
         const modelPath = "./my_model/";
         const modelURL = modelPath + "model.json";
         const metadataURL = modelPath + "metadata.json";
-
+   
         tmImage.load(modelURL, metadataURL).then(model => {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('status').innerHTML = "Model Loading Complete"
 
             function run() {
+            
                 model.predict(img).then(predictions => {
                     console.log('Predictions: ', predictions);
                     predictions.sort((a, b) => (b.probability - a.probability));
                     result.innerHTML = predictions[0].className + ' ' + parseInt(predictions[0].probability * 100) + '%';
+                    //판별된 클래스네임의 따라 설명 불러오기
+                    if(predictions[0].className == "김밥"){
+                    manualText.innerHTML = manual[0];
+                    console.log("sd")
+                    }
+                    //
+
                 });
             }
 
             img.src = "";
 
             input.addEventListener('change', (e) => {
+                result.innerHTML = "Please wait a minute..";
                 img.src = URL.createObjectURL(e.target.files[0]);
+           
             }, false);
 
             img.onload = function () {
@@ -75,6 +144,8 @@
 
         });
     </script>
+ 
+
 </body>
 
 </html>

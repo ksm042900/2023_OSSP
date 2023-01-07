@@ -7,23 +7,59 @@ body{
     font-family: 'Roboto';
 }
 
+/* @media screen and (min-width: 1024px){
+    .container{
+        zoom: 0.8;
+    }
+} */
+
+/* 업로드 버튼 css */
+.filebox label {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #999;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #fdfdfd;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+  }
+  .filebox input[type="file"] {  /* 파일 필드 숨기기 */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+  }
+
+#kor_flagImg{
+    width: 60px;
+    margin-top: -2px;
+    border-radius: 3px;
+}
+
 .btn-outline-secondary{
     background-color: rgb(185, 185, 185);
     border-radius: 5px;
 }
 
 .card{
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    margin-left: 260px;
+    height: 50%;
+    border-radius: 10px;
+}
+#img{
+    border-radius: 10px;
 }
 
 .described{
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    width: 500px;
-    height: 500px;
-    margin-top: -45px;
-    margin-left: 1100px;
+    position: relative;
+    height: 200px;
+    margin-top: -60px;
+    border-radius: 10px;
 }
