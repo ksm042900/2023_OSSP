@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row text-center py-5">
             <div class="col">
-                <h1><img src="kor_flag.jpg" id="kor_flagImg" alt=""> WHAT FOOD IS THIS?</h1>
+                <h1 id="h1_text"><img src="kor_flag.jpg" id="kor_flagImg" alt=""> WHAT FOOD IS THIS?</h1>
                 <p id="status">Loading Model</p>
                 
             
@@ -39,7 +39,7 @@
         </div>
         <div class="described">
             <p id="manual">
-                Please upload a picture.
+           
             </p>
         
         </div>
@@ -112,18 +112,144 @@ z-index: 100;
    
         tmImage.load(modelURL, metadataURL).then(model => {
             document.getElementById('loader').style.display = 'none';
-            document.getElementById('status').innerHTML = "Model Loading Complete"
+            document.getElementById('status').innerHTML = "Please upload a photo."
 
             function run() {
             
                 model.predict(img).then(predictions => {
                     console.log('Predictions: ', predictions);
                     predictions.sort((a, b) => (b.probability - a.probability));
-                    result.innerHTML = predictions[0].className + ' ' + parseInt(predictions[0].probability * 100) + '%';
+                    result.innerHTML = predictions[0].className;
+
                     //판별된 클래스네임의 따라 설명 불러오기
-                    if(predictions[0].className == "김밥"){
-                    manualText.innerHTML = manual[0];
-                    console.log("sd")
+                    switch(predictions[0].className){
+                    case "갈비구이":
+                        result.innerHTML += "(ggalbigui)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[0];
+                        break;
+                    case "갈치구이":
+                        result.innerHTML += "(galchigui)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[1];
+                        break;       
+                    case "고등어구이":
+                        result.innerHTML += "(godeungeogui)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[2];
+                        break;     
+                    case "곱창구이":
+                        result.innerHTML += "(gopchanggui)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[3];
+                        break;    
+                    case "닭갈비":
+                        result.innerHTML += "(dakgalbi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[4];
+                        break;  
+                    case "더덕구이":
+                        result.innerHTML += "(deodeokgui)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[5];
+                        break;      
+                    case "떡갈비":
+                        result.innerHTML += "(tteokgalbi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[6];
+                        break; 
+                    case "불고기":
+                        result.innerHTML += "(bulgogi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[7];
+                        break; 
+                    case "장어구이":
+                        result.innerHTML += "(jangeogui)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[8];
+                        break; 
+                    case "조개구이":
+                        result.innerHTML += "(jogaegui)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[9];
+                        break; 
+                    case "황태구이":
+                        result.innerHTML += "(hwangtaegui)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[10];
+                        break; 
+                    case "계란국":
+                        result.innerHTML += "(dalgyalguk)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[11];
+                        break; 
+                    case "미역국":
+                        result.innerHTML += "(miyeokguk)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[12];
+                        break;     
+                    case "북엇국":
+                        result.innerHTML += "(Bugeotguk)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[13];
+                        break;   
+                    case "시래기국":
+                        result.innerHTML += "(Siraegiguk)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[14];
+                        break;    
+                    case "육개장":
+                        result.innerHTML += "(yukgaejang)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[15];
+                        break;    
+                    case "콩나물국":
+                        result.innerHTML += "(kongnamulguk)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[16];
+                        break;   
+                    case "파김치":
+                        result.innerHTML += "(pakimchi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[17];
+                        break;      
+                    case "깍두기":
+                        result.innerHTML += "(kkakdugi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[18];
+                        break;    
+                    case "오이소박이":
+                        result.innerHTML += "(oisobagi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[19];
+                        break;    
+                    case "열무김치":
+                        result.innerHTML += "(yeolmukimchi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[20];
+                        break;        
+                    case "백김치":
+                        result.innerHTML += "(baekkimchi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[21];
+                        break;   
+                    case "무생채":
+                        result.innerHTML += "(musaengchae)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[22];
+                        break;   
+                    case "총각김치":
+                        result.innerHTML += "(chonggakkimchi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[23];
+                        break;   
+                    case "갓김치":
+                        result.innerHTML += "(gatkimchi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[24];
+                        break;   
+                    case "나박김치":
+                        result.innerHTML += "(nabakkimchi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[25];
+                        break;   
+                    case "배추김치":
+                        result.innerHTML += "(baechukimchi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[26];
+                        break;   
+                    case "부추김치":
+                        result.innerHTML += "(buchukimchi)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[27];
+                        break;   
+                    case "가지볶음":
+                        result.innerHTML += "(gajibokkeum)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[28];
+                        break;   
+                    case "고사리나물":
+                        result.innerHTML += "(gosarinamul)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[29];
+                        break;   
+                    case "미역줄기볶음":
+                        result.innerHTML += "(miyeokjulgibokkeum)"+' ' + parseInt(predictions[0].probability * 100) + '%';
+                        manualText.innerHTML = manual[30];
+                        break; 
+
+
+
                     }
                     //
 
