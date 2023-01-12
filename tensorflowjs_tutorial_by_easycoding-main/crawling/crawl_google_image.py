@@ -1,19 +1,21 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 import urllib.request
 import os
 
 pumjong = {
     # "강아지": ["치와와", "진도개", "말티즈", "비숑프리제", "요크샤테리어", "푸들", "셰퍼드", "불도그", "골든리트리버", "시베리안 허스키"],
-    "한국음식": ["김밥", "떡국"]
+    "강아지": ["김밥"]
 
 }
 
 
 def crawling(target_name):
     driver.get("https://www.google.co.kr/imghp?hl=ko&tab=wi&ogbl")
-    elem = driver.find_element_by_name("q")
+    elem = driver.find_element(By.NAME, 'q')
     elem.send_keys(target_name)
     elem.send_keys(Keys.RETURN)
     # (Seconds) Increase this number if your network is slow
@@ -36,19 +38,20 @@ def crawling(target_name):
         new_height = driver.execute_script("return document.body.scrollHeight")
         if new_height == last_height:
             try:
-                driver.find_element_by_css_selector(".mye4qd").click()
+                driver.find_element(By.CSS_SELECTOR,".mye4qd").click()
             except:
                 break
         last_height = new_height
 
-        images = driver.find_elements_by_css_selector(".rg_i.Q4LuWd")
-
+        images = driver.find_elements(By.CSS_SELECTOR,".rg_i.Q4LuWd")
+        # images = driver.find_element(By.CSS_SELECTOR, ".n3VNCb.KAlRDb")
         for image in images:
             try:
                 image.click()
                 time.sleep(2)
-                imgUrl = driver.find_element_by_xpath(
-                    '/html/body/div[2]/c-wiz/div[3]/div[2]/div[3]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div/div[2]/a/img').get_attribute("src")
+                imgUrl = driver.find_element(By.XPATH,
+                    '/html/body/div[2]/c-wiz/div[3]/div[2]/div[3]/div[2]/div/div[2]/div[2]/div[2]/c-wiz/div[2]/div[1]/div[1]/div[2]/div/a/img').get_attribute("src")
+                    
                 urllib.request.urlretrieve(imgUrl, str(count) + ".jpg")
                 count = count+1
                 if count >= (NUMBER_OF_PICTURES+1):
