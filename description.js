@@ -1,27 +1,27 @@
-function getManual(){
-  //HashMap 선언
-  HashMap = function(){
-    this.map = new Array();
-  }
-  //HashMap 기능 추가
-  HashMap.prototype = {
-    put: function(key,value){
-      this.map[key] = value;
-    },
-    get : function(key){
-      return this.map[key];
-    },
-    clear : function(){
-    this.map = new Array();
-    },
-    getKeys : function(){
-      var keys = new Array();
-      for(i in this.map){
-        keys.push(i);
-      }
-      return keys;
+  function getManual(){
+    //HashMap 선언
+    HashMap = function(){
+      this.map = new Array();
     }
-  };
+    //HashMap 기능 추가
+    HashMap.prototype = {
+      put: function(key,value){
+        this.map[key] = value;
+      },
+      get : function(key){
+        return this.map[key];
+      },
+      clear : function(){
+      this.map = new Array();
+      },
+      getKeys : function(){
+        var keys = new Array();
+        for(i in this.map){
+          keys.push(i);
+        }
+        return keys;
+      }
+    };
 
   //HashMap 객체 생성
   description = new HashMap();
@@ -226,21 +226,21 @@ function getManual(){
   description.put("살루키","살루키는 기원이 오래된 개로 기원전 7,000~6,000년 수메르 유적에서도 발견될 정도입니다. 또한 이집트의 왕도 살루키를 아껴 왕이 죽으면 함께 미라가 되기도 하였습니다. 사막 등의 어려운 조건에서도 잘 살 수 있으며 추위에도 강합니다. 다리가 강하고 표정은 위엄이 있으며, 주인에 대하여 애정이 깊고 집을 지키는 개로서 이용됩니다.");
   character.put("살루키","냉담한, 총명한, 조용한");
   birthplace.put("살루키","이집트");
-  weight.put("살루키","18 - 27(대형견)");
+  weight.put("살루키","18 - 27kg(대형견)");
 
   //비글
   enName.put("비글","(Beagle)");
   description.put("비글","비글은 옛날부터 사냥개로 쓰여온 개의 품종이며, 17세기에 지금의 이름이 붙여졌습니다. 20세기 이전까지만해도 귀와 주둥이가 길었습니다. 20세기에 오면서 오늘날의 비글과 같이 주둥이와 귀가 짧아짐과 함께 애완용으로 기르기도 합니다. 민첩하고 붙임성이 있으나, 쉽게 훈련시킬 수 없어 애완용으로는 그리 적합하지 않아 전통적으로 사냥용으로 쓰인것입니다. 최근에는 후각이 예민한 특성을 이용해 마약탐지견으로 활용하고 있습니다.");
   character.put("비글","쾌활한, 침착한, 총명한, 결연한, 쉽게 흥분하는, 온화한");
   birthplace.put("비글","영국, 잉글랜드, 그레이트브리튼 섬");
-  weight.put("비글","9 - 11(소형견)");
+  weight.put("비글","9 - 11kg(소형견)");
 
   //스키퍼키
   enName.put("스키퍼키","(Schipperke)");
   description.put("스키퍼키","스키퍼키는 벨기에 원산으로 온몸이 검은색 털로 싸여 있습니다. 종종 꼬리 없이 태어나기도 하며, 스키퍼키의 전설에 의하면 꼬리를 자르는 습관이 시작된 것은 1609년입니다. 이 견종은 수도 브뤼셀과 안트위프를 연결하는 운하에서 거룻배의 마스코트로 사랑 받았으며, 1885년 브뤼셀의 전람회에서 벨기에의 헨리에트 왕비가 발굴하여 이 견종을 키우게 되었습니다. 학습 능력과 문제해결 능력이 매우 뛰어나며, 쾌활하고 총명한 이 개는 예나 지금이나 대단히 사랑을 받으며 벨기에가 자랑하는 품종의 하나가 되었습니다.");
   character.put("스키퍼키","호기심이 많은, 충실한, 민첩한, 겁이 없는, 자신감에 차있는, 독립심이 강한");
   birthplace.put("스키퍼키","벨기에");
-  weight.put("스키퍼키","3 - 9(소형견)");
+  weight.put("스키퍼키","3 - 9kg(소형견)");
 
   //그레이트데인
   enName.put("그레이트데인","(Great Dane)");
@@ -347,7 +347,40 @@ function getManual(){
   birthplace.put("차이니즈크레스티드","중국, 멕시코, 아프리카");
   weight.put("차이니즈크레스티드","2.3 - 5.4kg(소형견)");
 
+  //노퍽테리어
+  enName.put("노퍽테리어","(Norfolk Terrier)");
+  description.put("노퍽테리어","노퍽 테리어는 환경의 변화에 잘 적응하며, 행동이 민첩하고 겁이 없는 등 테리어의 전형적인 성질을 가지고 있습니다. 활동성이 강하고 명랑하며 사교적입니다. 그러나 사냥개로서의 본능을 가지고 있어 경계심이 강합니다. 지금은 사냥개로서 뿐만 아니라, 집 지키는 개나 애완견으로도 인기가 있습니다.");
+  character.put("노퍽테리어","자신감, 활발한, 붙임성이 있는, 겁이 없는, 밝은, 경계심이 많은");
+  birthplace.put("노퍽테리어","그레이트브리튼 섬");
+  weight.put("노퍽테리어","5 - 5.4kg(소형견)");
+  
+  //로첸
+  enName.put("로첸","(Lowchen)");
+  description.put("로첸","로첸은 독일어로 '작은 사자'란 말이며, 풍성한 갈기털이 사자를 연상시킨다고 해서 붙여진 이름입니다. 소유자로 아이들과 다른 반려견들과도 잘 지내는 친절한 성격이여서 아파트에서 그리기 좋은 견종으로 추천을 받습니다.");
+  character.put("로첸","장난스러운, 밝은, 우호적인, 총명한, 활동적인");
+  birthplace.put("로첸","프랑스, 독일, 유럽");
+  weight.put("로첸","4.5 - 6.8kg(소형견)");
 
+  //아프칸하운드
+  enName.put("아프칸하운드","(Afghan Hound)");
+  description.put("아프칸하운드","아프간 하운드는 예전에 아프가니스탄에서 수렵용으로 길러지다가 19세기 후반 영국에 전해졌습니다. 비단결 같은 탐스러운 털을 지니고 있으며 험한 지역에서도 빠르게 달릴 수 있습니다. 달리다가 방향전환을 잘 하며 달리는 힘이 있습니다. 어깨높이 64~69cm, 몸무게 23~27kg이며, 대한민국에서 스너피라는 복제견을 만들기도 했습니다.");
+  character.put("아프칸하운드","품위있는, 냉담한, 독립심이 강한, 익살스러운, 밝은");
+  birthplace.put("아프칸하운드","아프가니스탄");
+  weight.put("아프칸하운드","26 - 34kg(대형견)");
+
+  //잉글리시세터
+  enName.put("잉글리시세터","(English Setter)");
+  description.put("잉글리시세터","잉글리쉬 세터는 14세기로 거슬러 올라가는 역사를 가진 총기견종입니다. 선조 중에는 스페니쉬 포인터, 프렌치 포인터와 다양한 스파니엘이 있습니다. 털은 길고 부드러우며 살짝 곱슬형입니다. 눈은 크고 헤이즐색이고, 코는 어두운 색깔을 띠고 있고, 적당한 길이의 귀는 밑으로 쳐져있습니다. 귀와, 꼬리, 다리, 그리고 배에는 털이 풍성합니다. ");
+  character.put("잉글리시세터","친근한, 상냥한, 느긋한, 총명한");
+  birthplace.put("잉글리시세터","잉글랜드, 프랑스, 웨일즈");
+  weight.put("잉글리시세터","25 - 36kg(중대형견)");
+
+  //프렌치불독
+  enName.put("프렌치불독","(French Bulldog)");
+  description.put("프렌치불독","렌치 불도그는 프랑스 원산으로 기원은 확실하지 않으나 1860년경 퍼그와 테리어의 교배로 생겨난 것으로 여겨집니다. 커다란 머리와 박쥐처럼 생긴 귀가 특징이며 털은 짧고 부드러우며 광택이 있습니다. 몸빛은 흰색 또는 검은색입니다. 성격은 활달하고 명랑하며 믿음직스러워 아이들의 친구로서 좋으며 집 지키는 개로서도 적당합니다.");
+  character.put("프렌치불독","온순한, 감각이 예민한, 생기있는, 사교성 좋은, 애정이 풍부한, 경계심이 많은, 활발한, 인내심 있는, 장난스러운, 탄탄한");
+  birthplace.put("프렌치불독","프랑스, 잉글랜드");
+  weight.put("프렌치불독","10 - 13kg(소형견)");
 
 }
 
