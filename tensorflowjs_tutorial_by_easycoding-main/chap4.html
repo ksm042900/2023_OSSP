@@ -1,3 +1,17 @@
+<!-- Copyright [ksm042900] [name of copyright owner]
+ 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+ 
+http://www.apache.org/licenses/LICENSE-2.0
+ 
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
 <!doctype html>
 <html lang="kr">
 
@@ -17,7 +31,7 @@
     <div class="container">
         <div class="row text-center py-5">
             <div class="col">
-                <h1 id="h1_text"><img src="kor_flag.jpg" id="kor_flagImg" alt="">What breed is this dog?</h1>
+                <h1 id="h1_text"><img src="dog_logo.png" id="kor_flagImg" alt="">What breed is this dog?</h1>
                 <p id="status">Loading Model</p>
                 
             
@@ -39,12 +53,11 @@
         </div>
         <div id="described">
          
-                <p id="character"><span id="characterTitle" style="font-weight: bold; " >성격: </span></p>
-                <p id="birthplace"> <span id="birthplaceTitle" style="font-weight: bold; " >출생지: </span></p>
-                <p id="weight"><span id="weightTitle" style="font-weight: bold; " >무게: </span></p>
-                <p id="description">
-              
-            </p>
+            <span id="characterTitle" style="font-weight: bold; " >성격 </span><p id="character"></p>
+            <span id="birthplaceTitle" style="font-weight: bold; " >출생지 </span><p id="birthplace"></p>
+            <span id="weightTitle" style="font-weight: bold; " >무게 </span><p id="weight"></p>
+            <p id="description"></p>
+            <br>
             
         </div>
   
@@ -121,9 +134,6 @@ z-index: 100;
         let birthplaceText = document.getElementById('birthplace');
         let weightText = document.getElementById('weight');
         let descriptionText = document.getElementById('description');
-        let characterTitle = document.getElementById("characterTitle");
-        let birthplaceTitle = document.getElementById("birthplaceTitle");
-        let weightTitle = document.getElementById("weightTitle");
 
         const modelPath = "./my_model/";
         const modelURL = modelPath + "model.json";
@@ -146,13 +156,6 @@ z-index: 100;
                     weightText.innerHTML =  weight.get(predictions[0].className); //무게
                     descriptionText.innerHTML = description.get(predictions[0].className); //설명
                     document.getElementById("described").style.opacity = "1"; 
-                    //
-        //             let characterTitle = document.getElementById("characterTitle");
-        // let birthplaceTitle = document.getElementById("birthplaceTitle");
-        // let weightTitle = document.getElementById("weightTitle");
-
-                  
-
                 });
             }
 
